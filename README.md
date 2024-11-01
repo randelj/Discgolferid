@@ -1,2 +1,0 @@
-# Discgolferid
-Veebilehe projekt - Discgolferid
