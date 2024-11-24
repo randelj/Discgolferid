@@ -1,106 +1,97 @@
-#scroll-animate
-{
-  overflow: hidden;
+#scroll-animate {
+    overflow: hidden;
 }
 
-#scroll-animate-main
-{
-  width: 100%;
-  left: 0;
-  position: fixed;
+#scroll-animate-main {
+    width: 100%;
+    left: 0;
+    position: fixed;
 }
 
-#heightPage,
-#heightScroll
-{
-  width: 10px;
-  top: 0;
-  position: absolute;
-  z-index: 99;
+header {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
-#heightPage
-{
-  left: 0;
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("headerpic.jpg"); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1; 
 }
 
-#heightScroll
-{
-  right: 0;
+header h1 {
+    position: fixed;
+    z-index: 1;
+    color: white;
+    font-size: 8vw; 
+    line-height: 1.2;
+    text-align: center;
+    padding-top: 400px;
+    margin: 0;
 }
 
-header
-{
-  width: 100%;
-  height: 100%;
-  background: url(https://raw.githubusercontent.com/hudsonmarinho/header-and-footer-parallax-effect/master/assets/images/bg-header.jpg) no-repeat 50% 50%;
-  top: 0;
-  position: fixed;
-  z-index: -1;
+footer {
+    width: 100%;
+    height: 300px;
+    background: gray;
+    bottom: -300px;
+    position: relative;
+    z-index: -1;
 }
 
-footer
-{
-  width: 100%;
-  height: 300px;
-  background: gray;
-  bottom: -300px;
-  position: fixed;
-  z-index: -1;
-}
-
-.content
-{
-  height: 1000px;
-  min-height: 1000px;
-  background: #ededed;
-  position: relative;
-  z-index: 1;
+.content {
+    height: 1000px;
+    min-height: 1000px;
+    background: #ededed;
+    position: relative;
+    z-index: 1;
 }
 
 .wrapper-parallax {
-  margin-top: 100%;
-  margin-bottom: 300px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 100%;
+    margin-bottom: 300px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-h1{
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: Helvetica;
-  font-size: 150px;
-  color: #fff;
+h1 {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 150px;
+    color: #fff;
+    z-index: 1;
 }
 
-
-
-.content h1{
-  line-height: 1000px;
-  color: #999;
+.content h1 {
+    line-height: 1000px;
+    color: #999;
 }
 
-footer h1
-{
-  line-height: 300px;
+footer h1 {
+    line-height: 300px;
 }
 
-header,
-footer,
-#scroll-animate-main
-{
-  -webkit-transition-property: all;
-     -moz-transition-property: all;
-      transition-property: all;
-
-  -webkit-transition-duration: 0.4s;
-     -moz-transition-duration: 0.4s;
-      transition-duration: 0.4s;
-
-  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
-     -moz-transition-timing-function: cubic-bezier(0, 0, 0, 1);
-      transition-timing-function: cubic-bezier(0, 0, 0, 1);
+header, footer, #scroll-animate-main {
+    transition: all 0.4s cubic-bezier(0, 0, 0, 1);
 }
