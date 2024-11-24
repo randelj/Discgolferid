@@ -1,27 +1,5 @@
-function scrollFooter(scrollY, heightFooter) {
-    console.log(scrollY);
-    console.log(heightFooter);
-
-    if (scrollY >= heightFooter) {
-        $('footer').css({
-            'bottom': '0px'
-        });
-    } else {
-        $('footer').css({
-            'bottom': '-' + heightFooter + 'px'
-        });
-    }
-}
-
 $(window).on('load', function () {
-    var windowHeight = $(window).height(),
-        footerHeight = $('footer').height(),
-        heightDocument = windowHeight + $('.content').height() + $('footer').height() - 20;
-
-    // Set height for the scrollable container
-    $('#scroll-animate, #scroll-animate-main').css({
-        'height': heightDocument + 'px'
-    });
+    var windowHeight = $(window).height();
 
     // Set header and content dimensions
     $('header').css({
@@ -33,20 +11,12 @@ $(window).on('load', function () {
         'margin-top': windowHeight + 'px'
     });
 
-    scrollFooter(window.scrollY, footerHeight);
-
-    // On scroll event
+    // Parallax effect on scroll
     window.onscroll = function () {
         var scroll = window.scrollY;
 
-        $('#scroll-animate-main').css({
-            'top': '-' + scroll + 'px'
-        });
-
         $('header').css({
-            'background-position-y': 50 - (scroll * 100 / heightDocument) + '%'
+            'background-position-y': 50 - (scroll * 50 / windowHeight) + '%'
         });
-
-        scrollFooter(scroll, footerHeight);
-    }
+    };
 });
