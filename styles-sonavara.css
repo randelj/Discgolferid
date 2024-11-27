@@ -40,10 +40,10 @@ header h1 {
     position: fixed;
     z-index: 1;
     color: white;
-    font-size: 8vw; 
+    font-size: 4vw; 
     line-height: 1.2;
     text-align: center;
-    padding-top: 400px;
+    padding-top: 900px;
     margin: 0;
 }
 
