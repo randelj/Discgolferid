@@ -74,8 +74,9 @@ header h1 {
 }
 /* Link Container */
 .link-container {
+
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: space-between; /* Center horizontally */
     gap: 3rem; /* Spacing between links */
     align-items: center; /* Align vertically */
     margin: 2rem auto; /* Center container */
@@ -83,20 +84,23 @@ header h1 {
 }
 
 /* Links Styling */
+/* Link Button Styling */
 .link-container a {
     text-decoration: none; /* Remove underline */
     font-size: 1.5rem; /* Larger text size */
     color: #333; /* Neutral, clean color */
     font-weight: 600; /* Bold text */
     padding: 0.5rem 1.5rem; /* Add padding for click area */
+    width: 1000px;
+    text-align: center;
     border-radius: 8px; /* Smooth rounded edges */
     transition: all 0.3s ease; /* Smooth transition for hover effect */
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle background for better readability */
+    background-color: #A7C7E7; /* Soft light blue for default */
 }
 
-/* Hover Effect */
+/* Hover Effect for Link Buttons */
 .link-container a:hover {
-    background-color: #333; /* Darker background on hover */
+    background-color: #5B8FB9; /* Darker light blue on hover */
     color: #fff; /* White text on hover */
     transform: scale(1.1); /* Slight zoom effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for hover emphasis */
@@ -105,10 +109,24 @@ header h1 {
 /* Active or Focused State (Optional) */
 .link-container a:focus, .link-container a:active {
     outline: none; /* Remove focus outline */
-    background-color: #555; /* Slightly different active state */
+    background-color: #4C7A99; /* Slightly different active state */
     color: #fff;
 }
 
+
+.content p{
+    color: #333;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 50px;
+    line-height: 40px;
+}
+
+.content h1 {
+    color: #05a300;
+    text-align: center;
+    font-size: 45px;
+}
 
 /* Individual panels for sections */
 .panel {
@@ -163,8 +181,8 @@ a:hover {
 /* General Accordion Styles */
 /* Accordion Button */
 .accordion {
-    background-color: #444;
-    color: #fdfdfd;
+    background-color: #A8D08D;
+    color: rgb(23, 23, 23);
     cursor: pointer;
     padding: 1.2rem 1.5rem;
     height: 160px;
@@ -177,13 +195,14 @@ a:hover {
     border-radius: 6px;
     margin: 5px 0;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-    letter-spacing: 0.5px;
-    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
 }
 
+
 .accordion:hover {
-    background-color: #555;
+    background-color: #7BAF6F;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
     transform: scale(1.02);
 }
@@ -193,7 +212,6 @@ a:hover {
     transform: scale(0.98);
 }
 
-/* Accordion Panel */
 /* Accordion Panel */
 .panel {
     max-height: 0;
@@ -233,13 +251,13 @@ a:hover {
 
 .panel p, .panel li {
     margin: 1rem 0;
-    line-height: 1.8;
+    line-height: 0.5rem;
     font-size: 1.1rem; /* Slightly bigger text for better readability */
 }
 
 .panel li strong {
-    color: #ffa500;
-    font-weight: 600; /* Bolder text */
+    color: black;
+    font-weight: 800; /* Bolder text */
     text-transform: capitalize;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Light shadow for emphasis */
 }
