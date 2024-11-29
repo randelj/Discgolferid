@@ -1,27 +1,5 @@
-function scrollFooter(scrollY, heightFooter) {
-    console.log(scrollY);
-    console.log(heightFooter);
-
-    if (scrollY >= heightFooter) {
-        $('footer').css({
-            'bottom': '0px'
-        });
-    } else {
-        $('footer').css({
-            'bottom': '-' + heightFooter + 'px'
-        });
-    }
-}
-
 $(window).on('load', function () {
     var windowHeight = $(window).height();
-    var footerHeight = $('footer').height();
-    var heightDocument = windowHeight + $('.content').height() + $('footer').height() - 20;
-
-    // Set height for the scrollable container
-    $('#scroll-animate, #scroll-animate-main').css({
-        'height': heightDocument + 'px'
-    });
 
     // Set header and content dimensions
     $('header').css({
@@ -33,53 +11,33 @@ $(window).on('load', function () {
         'margin-top': windowHeight + 'px'
     });
 
-    scrollFooter(window.scrollY, footerHeight);
-
-    // Optimized scroll handling with requestAnimationFrame
-    let ticking = false;
-
-    function handleScroll() {
+    // Parallax effect on scroll
+    window.onscroll = function () {
         var scroll = window.scrollY;
 
-        // Update elements' styles
-        $('#scroll-animate-main').css('top', `-${scroll}px`);
-        $('header').css('background-position-y', `${50 - (scroll * 100 / heightDocument)}%`);
-
-        scrollFooter(scroll, footerHeight);
-        ticking = false; // Reset ticking
-    }
-
-    window.addEventListener('scroll', function () {
-        if (!ticking) {
-            window.requestAnimationFrame(handleScroll);
-            ticking = true;
-        }
-    });
+        $('header').css({
+            'background-position-y': 50 - (scroll * 50 / windowHeight) + '%'
+        });
+    };
 });
 
-function scrollFooter(scrollY, heightFooter) {
-    if (scrollY >= heightFooter) {
-        $('footer').css('bottom', '0px');
-    } else {
-        $('footer').css('bottom', `-${heightFooter}px`);
-    }
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.accordion');
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+    accordions.forEach((accordion) => {
+        accordion.addEventListener('click', function () {
+            // Toggle active class for clicked accordion
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
+            // Open or close the panel
+            if (panel.classList.contains('open')) {
+                panel.classList.remove('open');
+            } else {
+                // Close all other panels
+                document.querySelectorAll('.panel').forEach((p) => p.classList.remove('open'));
+                panel.classList.add('open');
+            }
+        });
+    });
+});
