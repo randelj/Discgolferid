@@ -3,7 +3,7 @@
 $(window).on('load', function () {
     var windowHeight = $(window).height();
 
-    // Set header and content dimensions
+    // Määrame päise ja sisu mõõtmed
     $('header').css({
         'height': windowHeight + 'px',
         'line-height': windowHeight + 'px'
@@ -13,7 +13,7 @@ $(window).on('load', function () {
         'margin-top': windowHeight + 'px'
     });
 
-    // Parallax effect on scroll
+    // Parallaksi efekt kerimisel
     window.onscroll = function () {
         var scroll = window.scrollY;
 
