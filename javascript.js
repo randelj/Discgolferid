@@ -1,3 +1,5 @@
+// VIITAMINE - JAVASCRIPT ON KIRJUTATUD CHATGPT AI POOLT.
+
 $(window).on('load', function () {
     var windowHeight = $(window).height();
 
