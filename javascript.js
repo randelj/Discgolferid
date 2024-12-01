@@ -1,7 +1,10 @@
+// VIITAMINE - JAVASCRIPT ON KIRJUTATUD CHATGPT AI POOLT.
+
+// Ootame, kuni aken on täielikult laadinud
 $(window).on('load', function () {
     var windowHeight = $(window).height();
 
-    // Set header and content dimensions
+    // Määrame päise ja sisu mõõtmed
     $('header').css({
         'height': windowHeight + 'px',
         'line-height': windowHeight + 'px'
@@ -11,7 +14,7 @@ $(window).on('load', function () {
         'margin-top': windowHeight + 'px'
     });
 
-    // Parallax effect on scroll
+    // Parallaksi efekt kerimisel
     window.onscroll = function () {
         var scroll = window.scrollY;
 
@@ -21,20 +24,21 @@ $(window).on('load', function () {
     };
 });
 
+// Ootame, kuni dokument on täielikult DOM-i laaditud
 document.addEventListener('DOMContentLoaded', () => {
     const accordions = document.querySelectorAll('.accordion');
 
     accordions.forEach((accordion) => {
         accordion.addEventListener('click', function () {
-            // Toggle active class for clicked accordion
+            // Lülitame sisse või välja aktiivse klassi klõpsatud akordionil
             this.classList.toggle('active');
             const panel = this.nextElementSibling;
 
-            // Open or close the panel
+            // Avame või sulgeme paneeli
             if (panel.classList.contains('open')) {
                 panel.classList.remove('open');
             } else {
-                // Close all other panels
+                // Sulgeme kõik teised paneelid
                 document.querySelectorAll('.panel').forEach((p) => p.classList.remove('open'));
                 panel.classList.add('open');
             }
