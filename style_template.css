@@ -82,6 +82,7 @@ header h1 {
   border-radius: 8px; /* Smooth rounded edges */
   transition: all 0.3s ease; /* Smooth transition for hover effect */
   background-color: #A7C7E7; /* Soft light blue for default */
+  white-space: nowrap;
 }
 
 /* Hover Effect for Link Buttons */
@@ -103,7 +104,7 @@ header h1 {
 /* Main content container */
 .content {
   margin: 0 auto;
-  max-width: 960px; /* Constrain content width */
+  max-width: 1100px; /* Constrain content width */
   padding: 2rem;
   background: rgba(255, 255, 255, 0.95); /* Slight transparency */
   border-radius: 10px;
